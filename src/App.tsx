@@ -1,10 +1,13 @@
 import "./App.css";
+import { UserProvider } from "./context";
 import { Dashboard } from "./dashboard/Dashboard";
 
 function App() {
   return (
     <>
-      <Dashboard />
+      <UserProvider>
+        <Dashboard />
+      </UserProvider>
     </>
   );
 }
