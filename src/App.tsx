@@ -1,13 +1,14 @@
 import "./App.css";
-import { UserProvider } from "./context";
-import { Dashboard } from "./dashboard/Dashboard";
+import { UseCallBackParent } from "./components/Memory/UseCallBack";
+import { UseMemo } from "./components/Memory/UseMemo";
+import { UseRef } from "./components/Memory/UseRef";
 
 function App() {
   return (
     <>
-      <UserProvider>
-        <Dashboard />
-      </UserProvider>
+      <UseRef />
+      <UseMemo num={100} />
+      <UseCallBackParent />
     </>
   );
 }
