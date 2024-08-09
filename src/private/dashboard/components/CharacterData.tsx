@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { Character } from "../models";
-import { UserContext } from "../../context";
+import { UserContext } from "../../../context";
 
 interface Props {
   characterData: Character;
