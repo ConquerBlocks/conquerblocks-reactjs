@@ -1,12 +1,13 @@
 import "./App.css";
-import { Providers } from "./providers/Providers";
-import { AppRouter } from "./App.router";
+import CustomModal from "./components/BasicExamplePortal/BasicExamplePortal";
+import TooltipExample from "./components/TooltipExample/TooltipExample";
 
 function App() {
   return (
-    <Providers>
-      <AppRouter />
-    </Providers>
+    <>
+      <CustomModal>Hola soy la app</CustomModal>
+      <TooltipExample />
+    </>
   );
 }
 
