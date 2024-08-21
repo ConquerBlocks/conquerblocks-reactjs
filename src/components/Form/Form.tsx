@@ -18,6 +18,7 @@ const MyForm = () => {
       name="name"
       control={control}
       label="Nombre"
+      type="text"
       error={errors.name}
     />
 
