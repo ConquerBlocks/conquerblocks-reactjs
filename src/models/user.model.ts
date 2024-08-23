@@ -5,3 +5,9 @@ export interface User {
 export const emptyUserState: User = {
   id: -1,
 };
+
+export interface RickAndMortiCharacter {
+  name: string;
+  gender: string;
+  status: string;
+}

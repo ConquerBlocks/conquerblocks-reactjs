@@ -2,13 +2,13 @@ import { Suspense, lazy } from "react";
 import "./App.css";
 import ErrorBoundary from "./ErrorBoundary";
 
-const Form = lazy(() => import("./components/Form/Form.tsx"))
+const InterceptorExample = lazy(() => import("./components/InterceptorExample/InterceptorExample.tsx"))
 
 function App() {
   return (
     <ErrorBoundary>
       <Suspense fallback={<div>Loading...</div>}>
-        <Form />
+        <InterceptorExample />
       </Suspense>
     </ErrorBoundary>
   );
