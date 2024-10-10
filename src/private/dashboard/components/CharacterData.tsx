@@ -12,7 +12,7 @@ export const CharacterData = ({ characterData }: Props) => {
     setTimeout(() => {
       setUser({ id: 1 });
     }, 2000);
-  }, []);
+  }, [setUser]);
 
   return (
     <div>

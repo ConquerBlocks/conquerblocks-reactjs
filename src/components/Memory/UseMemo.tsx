@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 interface Props {
   num: number;
@@ -13,10 +13,11 @@ export const UseMemo = ({ num }: Props) => {
   };
 
   useEffect(() => {
+    console.log(num)
     setTimeout(() => {
       setNumberRef(2);
     }, 4000);
-  }, []);
+  }, [num]);
 
   const memoizedValue = useMemo(
     () => expensivecalculation(numberRef),

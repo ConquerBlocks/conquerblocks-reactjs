@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type UseApiOptions = {
   autoFetch?: boolean;
@@ -17,7 +17,7 @@ export const useApi = <T,>(apiCall: () => { call: Promise<AxiosResponse<T>>; con
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<Error | null>(null);
 
-  const fetch = () => {
+  const fetch = useCallback(() => {
     const { call, controller } = apiCall();
     setLoading(true);
     call.
@@ -33,14 +33,14 @@ export const useApi = <T,>(apiCall: () => { call: Promise<AxiosResponse<T>>; con
         setLoading(false)
       })
     return () => controller.abort();
-  }
+  }, [apiCall])
 
   useEffect(() => {
     if (options && options.autoFetch) {
       const cleanup = fetch()
       return cleanup;
     }
-  }, [])
+  }, [fetch, options])
 
   return { loading, data, error, fetch };
 }
